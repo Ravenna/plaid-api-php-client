@@ -80,6 +80,15 @@ class PlaidException extends \Exception
                     $response['request_id']
                 );
                 break;
+            case 'INSTITUTION_ERROR':
+                $e = new ItemError(
+                    $response['error_message'],
+                    $response['error_type'],
+                    $response['error_code'],
+                    $response['display_message'],
+                    $response['request_id']
+                );
+                break;
         }
 
         return $e;
